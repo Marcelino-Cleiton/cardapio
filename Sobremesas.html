@@ -1,28 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 
 <head>
     <meta charset="utf-8">
     <title>Cardápio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
     <header>
-
+        <div ng-include="'MenuNavBar.html'"></div>
     </header>
 
-    <nav>
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a class="inicio" href="Index.html">INICIO</a></li>
-                <li><a href="Lanches.html">Lanches</a></li>
-                <li><a href="Bebidas.html">Bebidas</a></li>
-                <li><a href="Sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </div>
-    </nav>
     <div class="row">
         <div class="col">
             <div class="col s12 m7">
@@ -123,7 +113,11 @@
                 © 2021 Copyright Cleiton e Edilson Ltda
             </div>
         </div>
-    </footer>
+    </footer>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
+    <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
 
 
 </body>

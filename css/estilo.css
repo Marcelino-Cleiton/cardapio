@@ -6,4 +6,10 @@
     width:200px;  
     height:200px;
 }
+.container{
+	border-radius: 10px;
+    border-color: rgb(238, 110, 115);
+    border-width: 1px;
+    margin: 0px;
+}
 

@@ -1,0 +1,19 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "descrição": "Arroz",
+            "preco": 2.5
+        },
+        {
+            "id": 2,
+            "descrição": "Feijão",
+            "preco": 3.5
+        },
+        {
+            "id": 3,
+            "descrição": "Aipim",
+            "preco": 4.5
+        }
+    ]
+}

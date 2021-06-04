@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="">
+
+<html ng-app="garconApp">
 
 <head>
     <meta charset="utf-8">
@@ -8,10 +9,11 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<body >
+<body ng-controler="CadastrosController">
     <header>
-        <div ng-include="'MenuNavBar.html'"></div>
+
     </header>
+<<<<<<< HEAD
     
     
     <footer class="page-footer">
@@ -19,12 +21,118 @@
             <div class="container">
                 © 2021 Copyright Cleiton e Edilson Ltda
             </div>
+=======
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="Index.html">Inicio</a></li>
+
+                <li><a href="CadastroGarcon.html">Cadastro de Garçon</a></li>
+            </ul>
+>>>>>>> e5625592115a30efa05261b53a5ebfb6c851eb5a
         </div>
-    </footer>
+    </nav>
+    <form>
+        <label for="codigo">Código</label>
+        <input id="codigo" name="codigo" type="text" ng-model=" Garcon.codigo" />
+        <br>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" ng-model=" Garcon.nome" />
+        <br>
+        <label for="telefone">telefone</label>
+        <input id="telefone" name="telefone" type="text" ng-model=" Garcon.telefone" />
+        <br>
+        <label for="Endereco">Endereço</label>
+        <input id="Endereco" name="Endereco" type="text" ng-model=" Garcon.endereco" />
+        <br>
+        <button ng-click="Salvar(Garcon)">Salvar</button>
+        <button ng-click="cancelar() ">cancelar</button>
+    </form>
+
+    <h3>Cadastros</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>nome</th>
+                <th>telefone</th>
+                <th>Endereco</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Garcon in cadastros track by $Index">
+                <td>{{Garcon.Codigo}}</td>
+                <td>{{Garcon.nome}}</td>
+                <td>{{Garcon.telefone}}</td>
+                <td>{{Garcon.endereço}}</td>
+                <td><a href="" ng-click="editar(cadastros)">[Editar]</a></td>
+                <td><a href="" ng-click="excluir(cadastros)">[Excluir]</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
     <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
+
+    <script>
+        var app = angular.module('garconApp', []);
+        app.controller('cadastrosControler', function($scope) {
+            var Garcon = [];
+            $scope.Garcon = {};
+
+            $scope.cadastros = cadastros;
+
+            $scope.salvar = function(Garcon) {
+                var cadastroEncontrado = false;
+                for (var i = 0, length = cadastros.length; i < length; i++) {
+                    if (cadastros[i].codigo == Garcon.codigo) {
+                        cadastros[i].nome = Garcon.nome;
+                        cadastros[i].telefone = Garcon.telefone;
+                        cadastros[i].endereco = Garcon.endereco;
+                        cadastroEncontrado = true;
+                        break;
+
+                    }
+
+                }
+                if (!cadastroEncontrado) {
+                    cadastros.push(Garcon);
+                }
+                $scope.Garcon = {};
+            };
+
+            $scope.editar = function(Garcon) {
+                $scope.Garcon = angular.copy(Garcon);
+            };
+
+
+
+            $scope.excluir = function(Garcon) {
+                for (var i = 0, length = cadastros.length; i < length; i++) {
+                    if (cadastros[i].id == Garcon.id) {
+                        cadastros.splice(i, 1);
+                    }
+                }
+            };
+            $scope.cancelar = function() {
+                $scope.Garcon = {};
+            }
+
+        });
+    </script>
 </body>
+<footer class="page-footer">
+    <div class="footer-copyright">
+        <div class="container">
+            © 2021 Copyright Cleiton e Edilson Ltda
+        </div>
+    </div>
+</footer>
 
 </html>

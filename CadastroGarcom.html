@@ -13,30 +13,50 @@
     <header>
         <div ng-include="'MenuNavBar.html'"></div>
     </header>
-    <form>
-        <label for="codigo">Código</label>
-        <input id="codigo" name="codigo" type="text" ng-model=" Garcon.codigo" />
-        <br>
-        <label for="nome">Nome</label>
-        <input id="nome" name="nome" type="text" ng-model=" Garcon.nome" />
-        <br>
-        <label for="telefone">telefone</label>
-        <input id="telefone" name="telefone" type="text" ng-model=" Garcon.telefone" />
-        <br>
-        <label for="Endereco">Endereço</label>
-        <input id="Endereco" name="Endereco" type="text" ng-model=" Garcon.endereco" />
-        <br>
-        <button ng-click="Salvar(Garcon)">Salvar</button>
-        <button ng-click="cancelar() ">cancelar</button>
-    </form>
+    <div  class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <label for="codigo">Código</label>
+                        <input placeholder="Código" id="codigo" type="number" class="validate" ng-model=" Garcon.codigo" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s10">
+                        <label for="nome">Nome</label>
+                        <input placeholder="Nome" id="nome" name="nome" type="text" class="validate"  ng-model=" Garcon.nome" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s10">
+                        <label for="telefone">Telefone</label>
+                        <input placeholder="Telefone" id="telefone" name="telefone" type="text" class="validate"  ng-model=" Garcon.telefone" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s10">
+                        <label for="Endereco">Endereço</label>
+                        <input placeholder="Endereço" id="Endereco" name="Endereco" type="text" ng-model=" Garcon.endereco" />
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="Salvar(Garcon)">Salvar
+                    <i class="material-icons left">check</i>
+                </button>
+                <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="cancelar() ">Cancelar
+                    <i class="material-icons left">clear</i>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <h3>Cadastros</h3>
-    <table>
+    <table class="responsive-table">
         <thead>
             <tr>
                 <th>Codigo</th>
-                <th>nome</th>
-                <th>telefone</th>
+                <th>Nome</th>
+                <th>Telefone</th>
                 <th>Endereco</th>
                 <th></th>
                 <th></th>
@@ -47,14 +67,13 @@
                 <td>{{Garcon.Codigo}}</td>
                 <td>{{Garcon.nome}}</td>
                 <td>{{Garcon.telefone}}</td>
-                <td>{{Garcon.endereço}}</td>
+                <td>{{Garcon.endereco}}</td>
                 <td><a href="" ng-click="editar(cadastros)">[Editar]</a></td>
                 <td><a href="" ng-click="excluir(cadastros)">[Excluir]</a></td>
             </tr>
         </tbody>
 
     </table>
-
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

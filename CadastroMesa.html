@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="mesaApp">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<body >
+  <body ng-controller="mesaController">
     <header>
         <div ng-include="'MenuNavBar.html'"></div>
     </header>
@@ -17,42 +17,75 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input placeholder="Número da Mesa" id="Numero-Mesa" type="text" class="validate">
+                <input placeholder="Número da Mesa" id="Numero_Mesa" type="number" class="validate" ng-model="mesa.id">
                 <label for="Numero_Mesa">Número da Mesa</label>
               </div>
             </div>  
             <div class="row">
               <div class="input-field col s10">
-                <input placeholder="Nome da Mesa" id="Nome-Mesa" type="text" class="validate">
-                <label for="Nome-Mesa">Reservada</label>
+                <input placeholder="Nome da Mesa" id="Nome_Mesa" type="text" class="validate" ng-model="mesa.nome">
+                <label for="Nome-Mesa">Nome da Mesa</label>
               </div>
             </div> 
             <div class="row">
               <div class="input-field col s4">
-                <input placeholder="Lugares" id="Lugares" type="number" class="validate">
+                <input placeholder="Lugares" id="Lugares" type="number" class="validate" ng-model="mesa.lugares">
                 <label for="Lugares">Lugares</label>
               </div> 
             </div>
             <div class="row"></div>
                 <p>
                   <label>
-                    <input type="checkbox" />
+                    <input id="Reservado" type="checkbox" ng-model="mesa.reservado"/>
                     <span>Reservada</span>
                   </label>
                 </p>
                 <p>
             </div> 
             <div class="row">
-              <button class="btn waves-effect waves-light" type="submit" name="action">Pesquisar
-                <i class="material-icons left">find_in_page</i>
+              <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="salvar(mesa)">Salvar
+                <i class="material-icons left">check</i>
               </button>
-              <button class="btn waves-effect waves-light" type="submit" name="action">Salvar
-                  <i class="material-icons left">check</i>
+              <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="cancelar() ">Cancelar
+                <i class="material-icons left">clear</i>
               </button>
             </div>
           </form>
         </div>
     </div>
+
+    <h3>Cadastros de Mesas</h3>
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Nome da Mesa</th>
+                <th>Lugares</th>
+                <th>Reservado</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="mesa in mesas track by $index">
+                <td>{{mesa.id}}</td>
+                <td>{{mesa.nome}}</td>
+                <td>{{mesa.lugares}}</td>
+                <td>{{mesa.reservado}}</td>
+                <td>
+                  <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(mesa)">Editar
+                    <i class="material-icons left">create</i>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="excluir(mesa)">Excluir
+                    <i class="material-icons left">delete</i>
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">

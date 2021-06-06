@@ -4,14 +4,24 @@ $(document).ready(function(){
 });
 var app = angular.module('mesaApp', []);
 app.controller('mesaController', function ($scope, mesaService) {
-    $scope.mesa = {};    
-    listar();    
+    $scope.mesa = {}; 
+    $scope.reserva = function(mesa){
+      var retorno = "";
+      if(mesa.reservado){
+        retorno = 'Reservado' ;
+      }
+      else {
+        retorno = 'Disponível' ;
+      }
+      return retorno;
+    };  
+    listar();   
     function listar() {
       mesaService.listar().then(function(resposta) {
             $scope.mesas = resposta.data;
         });
     }
-    
+
     $scope.salvar = function(mesa) {
       mesaService.salvar(mesa).then(listar);
         $scope.mesa = {};
@@ -22,7 +32,7 @@ app.controller('mesaController', function ($scope, mesaService) {
     };
     
     $scope.excluir = function(mesa) {
-        mesaService.excluir(mesa).then(listar);
+      mesaService.excluir(mesa).then(listar);
     };
     
     $scope.cancelar = function() {

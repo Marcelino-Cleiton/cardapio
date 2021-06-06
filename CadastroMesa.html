@@ -71,7 +71,7 @@
                 <td>{{mesa.id}}</td>
                 <td>{{mesa.nome}}</td>
                 <td>{{mesa.lugares}}</td>
-                <td>{{mesa.reservado}}</td>
+                <td id="colunaReserva{{mesa.id}}" >{{reserva(mesa)}}</td>
                 <td>
                   <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(mesa)">Editar
                     <i class="material-icons left">create</i>

@@ -1,23 +1,22 @@
 {
-    "mesas": [
-        {
+    "mesas": [{
             "id": 1,
             "nome": "Perto da Janela",
             "lugares": 4.0,
-            "reservado" : true
-	
+            "reservado": true
+
         },
         {
             "id": 2,
             "nome": "Perto da Recepção",
             "lugares": 5.0,
-            "reservado" : true
+            "reservado": true
         },
         {
             "id": 3,
             "nome": "Perto da Cozinha",
             "lugares": 4.0,
-            "reservado" : false	
+            "reservado": false
         }
     ]
 }

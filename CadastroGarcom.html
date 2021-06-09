@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app="cadastrosApp">
+<html ng-app="garcomApp">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<body ng-controler="CadastrosController">
+<body ng-controler="garcomController">
     <header>
         <div ng-include="'MenuNavBar.html'"></div>
     </header>
@@ -19,28 +19,28 @@
                 <div class="row">
                     <div class="input-field col s4">
                         <label for="codigo">Código</label>
-                        <input placeholder="Código" id="codigo" type="number" class="validate" ng-model="cadastro.codigo" />
+                        <input placeholder="Código" id="codigo" type="number" class="validate" ng-model="garcom.codigo" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s10">
                         <label for="nome">Nome</label>
-                        <input placeholder="Nome" id="nome" name="nome" type="text" class="validate" ng-model="cadastro.nome" />
+                        <input placeholder="Nome" id="nome" name="nome" type="text" class="validate" ng-model="garcom.nome" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s10">
                         <label for="telefone">Telefone</label>
-                        <input placeholder="Telefone" id="telefone" name="telefone" type="text" class="validate" ng-model="cadastro.telefone" />
+                        <input placeholder="Telefone" id="telefone" name="telefone" type="text" class="validate" ng-model="garcom.telefone" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s10">
                         <label for="Endereco">Endereço</label>
-                        <input placeholder="Endereço" id="Endereco" name="Endereco" type="text" ng-model="cadastro.endereco" />
+                        <input placeholder="Endereço" id="Endereco" name="Endereco" type="text" ng-model="garcom.endereco" />
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="Salvar(cadastro)">Salvar
+                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="Salvar(garcom)">Salvar
                     <i class="material-icons left"></i>
                 </button>
                 <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="cancelar() ">Cancelar
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <h3>Cadastros</h3>
+    <h3>Garçons</h3>
     <table class="responsive-table">
         <thead>
             <tr>
@@ -63,13 +63,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cadastro in cadastros track by $Index">
-                <td ng-dblclick="editar(cadastro)">{{cadastro.Codigo}}</td>
-                <td ng-dblclick="editar(cadastro)">{{cadastro.nome}}</td>
-                <td ng-dblclick="editar(cadastro)">{{cadastro.telefone}}</td>
-                <td ng-dblclick="editar(cadastro)">{{cadastro.endereco}}</td>
-                <td><a href="" ng-click="editar(cadastro)">[Editar]</a></td>
-                <td><a href="" ng-click="excluir(cadastro)">[Excluir]</a></td>
+            <tr ng-repeat="garcom in garcons track by $Index">
+                <td ng-dblclick="editar(garcom)">{{garcom.Codigo}}</td>
+                <td ng-dblclick="editar(garcom)">{{garcom.nome}}</td>
+                <td ng-dblclick="editar(garcom)">{{garcom.telefone}}</td>
+                <td ng-dblclick="editar(garcom)">{{garcom.endereco}}</td>
+                <td><a href="" ng-click="editar(garcom)">[Editar]</a></td>
+                <td><a href="" ng-click="excluir(garcom)">[Excluir]</a></td>
             </tr>
         </tbody>
 

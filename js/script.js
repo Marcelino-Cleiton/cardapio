@@ -62,85 +62,53 @@ app.service('mesaService', function($http) {
 
 });
 
-var app = angular.module('cadastrosApp', []);
+var app = angular.module('garcomApp', []);
+app.controller('garcomController', function($scope, garcomService) {
+    $scope.garcom = {};
+    listar();
 
-app.controller('cadastrosController', function($scope, cadastrosService) {
-    $scope.cadastros = cadastrosService.listar();
-    $scope.cadastro = {};
-
-
-
-    $scope.cadastros = produtoservice.listar();
-
-    $scope.salvar = function(cadastro) {
-        cadastrosService.salvar(cadastro);
-        $scope.cadastro = {};
-    };
-
-    $scope.editar = function(cadastro) {
-        $scope.cadastro = angular.copy(cadastro);
-    };
-
-
-    $scope.excluir = function(cadastro) {
-        produtosService.excluir(cadastro);
-    };
-    $scope.cancelar = function() {
-        $scope.cadastro = {};
+    function listar() {
+        mesaService.listar().then(function(resposta) {
+            $scope.garcons = resposta.data;
+        });
     }
 
+    $scope.salvar = function(garcom) {
+        mesaService.salvar(garcom).then(listar);
+        $scope.garcom = {};
+    };
+
+    $scope.editar = function(garcom) {
+        $scope.garcom = angular.copy(garcom);
+    };
+
+    $scope.excluir = function(garcom) {
+        garcomService.excluir(garcom).then(listar);
+    };
+
+    $scope.cancelar = function() {
+        $scope.garcom = {};
+    };
 });
 
+app.service('garcomService', function($http) {
 
+    var api = 'http://localhost:3000/garcons';
 
+    this.listar = function() {
+        return $http.get(api);
+    };
 
-app.service('cadastrosService', function() {
-    var cadastros = [{
-        codigo: 1,
-        nome: 'jõao',
-        telefone: 123456,
-        endereco: 'pinheiros'
-    }, {
-        codigo: 2,
-        nome: 'kaio',
-        telefone: 987654,
-        endereco: 'lagoa azul'
-    }, {
-        codigo: 3,
-        nome: 'ramon',
-        telefone: 48569823,
-        endereco: 'quebrada'
-    }];
-})
-
-this.listar = function() {
-    return cadastros;
-};
-
-
-this.salvar = function(cadastro) {
-    var cadastroEncontrado = false;
-    for (var i = 0, length = cadastros.length; i < length; i++) {
-        if (cadastros[i].codigo == cadastro.codigo) {
-            cadastros[i].nome = cadastro.nome;
-            cadastros[i].telefone = cadastro.telefone;
-            cadastros[i].endereco = cadastro.endereco;
-            cadastroEncontrado = true;
-            break;
-
+    this.salvar = function(garcom) {
+        if (garcom.id) {
+            return $http.put(api + '/' + garcom.id, garcom);
+        } else {
+            return $http.post(api, garcom);
         }
+    };
 
-    }
-    if (!cadastroEncontrado) {
-        cadastros.push(cadastro);
-    }
-    $scope.cadastro = {};
-};
-this.excluir = function(cadastro) {
-    for (var i = 0, length = cadastros.length; i < length; i++) {
-        if (cadastros[i].codigo == cadastro.codigo) {
-            cadastros.splice(i, 1);
-            break;
-        }
-    }
-}
+    this.excluir = function(garcom) {
+        return $http.delete(api + '/' + garcom.id);
+    };
+
+});

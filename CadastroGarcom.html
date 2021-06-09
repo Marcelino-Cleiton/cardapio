@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<body ng-controler="garcomController">
+<body ng-controller="garcomController">
     <header>
         <div ng-include="'MenuNavBar.html'"></div>
     </header>
@@ -40,7 +40,7 @@
                         <input placeholder="Endereço" id="Endereco" name="Endereco" type="text" ng-model="garcom.endereco" />
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="Salvar(garcom)">Salvar
+                <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="salvar(garcom)">Salvar
                     <i class="material-icons left"></i>
                 </button>
                 <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="cancelar() ">Cancelar
@@ -63,8 +63,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="garcom in garcons track by $Index">
-                <td ng-dblclick="editar(garcom)">{{garcom.Codigo}}</td>
+            <tr ng-repeat="garcom in garcons track by $index">
+                <td ng-dblclick="editar(garcom)">{{garcom.codigo}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.nome}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.telefone}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.endereco}}</td>
@@ -90,8 +90,4 @@
 <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
 <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
 
-</html> language="JavaScript" type="text/javascript" src='js/script.js'></script>
-
-</html>
-
-</html>
+</html> 

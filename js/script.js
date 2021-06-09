@@ -68,13 +68,13 @@ app.controller('garcomController', function($scope, garcomService) {
     listar();
 
     function listar() {
-        mesaService.listar().then(function(resposta) {
+        garcomService.listar().then(function(resposta) {
             $scope.garcons = resposta.data;
         });
     }
 
     $scope.salvar = function(garcom) {
-        mesaService.salvar(garcom).then(listar);
+        garcomService.salvar(garcom).then(listar);
         $scope.garcom = {};
     };
 
@@ -100,15 +100,15 @@ app.service('garcomService', function($http) {
     };
 
     this.salvar = function(garcom) {
-        if (garcom.id) {
-            return $http.put(api + '/' + garcom.id, garcom);
+        if (garcom.codigo) {
+            return $http.put(api + '/' + garcom.codigo, garcom);
         } else {
             return $http.post(api, garcom);
         }
     };
 
     this.excluir = function(garcom) {
-        return $http.delete(api + '/' + garcom.id);
+        return $http.delete(api + '/' + garcom.codigo);
     };
 
 });

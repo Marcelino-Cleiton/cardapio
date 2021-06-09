@@ -68,10 +68,10 @@
         </thead>
         <tbody>
             <tr ng-repeat="mesa in mesas track by $index">
-                <td>{{mesa.id}}</td>
-                <td>{{mesa.nome}}</td>
-                <td>{{mesa.lugares}}</td>
-                <td>{{reserva(mesa)}}</td>
+                <td ng-dblclick="editar(mesa)">{{mesa.id}}</td>
+                <td ng-dblclick="editar(mesa)">{{mesa.nome}}</td>
+                <td ng-dblclick="editar(mesa)">{{mesa.lugares}}</td>
+                <td ng-dblclick="editar(mesa)">{{reserva(mesa)}}</td>
                 <td>
                   <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(mesa)">Editar
                     <i class="material-icons left">create</i>

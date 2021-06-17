@@ -1,34 +1,38 @@
 {
   "mesas": [
     {
-      "id"       : 1,
-      "nome"     : "Perto da Janela da sacada",
-      "lugares"  : 4,
-      "reservado": true
+      "nome": "Perto da saída",
+      "lugares": 3,
+      "reservado": true,
+      "id": 1,
+      "garcom": "Edilson"
     },
     {
-      "id"       : 3,
-      "nome"     : "Perto da Cozinha",
-      "lugares"  : 4,
-      "reservado": false
+      "nome": "Perto da porta",
+      "lugares": 3,
+      "reservado": true,
+      "id": 2,
+      "garcom": "Cleiton"
     }
   ],
   "garcons": [
     {
-        "codigo"  : 1,
-        "nome"    : "jõao",
-        "telefone": 123456,
-        "endereco": "pinheiros"
-    }, {
-        "codigo"  : 2,
-        "nome"    : "kaio",
-        "telefone": 987654,
-        "endereco": "lagoa azul"
-    }, {
-        "codigo"  : 3,
-        "nome"    : "ramon",
-        "telefone": 48569823,
-        "endereco": "quebrada"
+      "codigo": 1,
+      "nome": "jõao",
+      "telefone": 123456,
+      "endereco": "pinheiros"
+    },
+    {
+      "codigo": 2,
+      "nome": "kaio",
+      "telefone": 987654,
+      "endereco": "lagoa azul"
+    },
+    {
+      "codigo": 3,
+      "nome": "ramon",
+      "telefone": 48569823,
+      "endereco": "quebrada"
     }
-   ]
+  ]
 }

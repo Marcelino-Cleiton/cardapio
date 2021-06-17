@@ -41,6 +41,12 @@
                   </label>
                 </p>
                 <p>
+            </div>
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Lugares" id="Lugares" type="number" class="validate" ng-model="mesa.garcom">
+                <label for="Lugares">Garçom</label>
+              </div> 
             </div> 
             <div class="row">
               <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="salvar(mesa)">Salvar
@@ -62,6 +68,7 @@
                 <th>Nome da Mesa</th>
                 <th>Lugares</th>
                 <th>Reservado</th>
+                <th>Garçom</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -72,6 +79,7 @@
                 <td ng-dblclick="editar(mesa)">{{mesa.nome}}</td>
                 <td ng-dblclick="editar(mesa)">{{mesa.lugares}}</td>
                 <td ng-dblclick="editar(mesa)">{{reserva(mesa)}}</td>
+                <td ng-dblclick="editar(mesa)">{{mesa.garcom}}</td>
                 <td>
                   <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(mesa)">Editar
                     <i class="material-icons left">create</i>

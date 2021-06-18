@@ -1,13 +1,6 @@
 {
   "mesas": [
     {
-      "nome": "Perto da saída",
-      "lugares": 3,
-      "reservado": true,
-      "id": 1,
-      "garcom": "Edilson"
-    },
-    {
       "nome": "Perto da porta",
       "lugares": 3,
       "reservado": true,

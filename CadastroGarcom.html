@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="input-field col s4">
                         <label for="codigo">Código</label>
-                        <input placeholder="Código" id="codigo" type="number" class="validate" ng-model="garcom.codigo" />
+                        <input placeholder="Código" id="codigo" type="number" class="validate" ng-model="garcom.id" />
                     </div>
                 </div>
                 <div class="row">
@@ -64,7 +64,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="garcom in garcons track by $index">
-                <td ng-dblclick="editar(garcom)">{{garcom.codigo}}</td>
+                <td ng-dblclick="editar(garcom)">{{garcom.id}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.nome}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.telefone}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.endereco}}</td>
@@ -98,5 +98,6 @@
 <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
 <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
+<div>
 
 </html>

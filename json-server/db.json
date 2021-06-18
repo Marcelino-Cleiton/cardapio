@@ -6,26 +6,33 @@
       "reservado": true,
       "id": 1,
       "garcom": "Edilson"
+    },
+    {
+      "nome": "Perto da porta",
+      "lugares": 3,
+      "reservado": true,
+      "id": 2,
+      "garcom": "Cleiton"
     }
   ],
   "garcons": [
     {
-      "codigo": 1,
-      "nome": "jõao",
-      "telefone": 123456,
-      "endereco": "pinheiros"
-    },
-    {
-      "codigo": 2,
+      "id": 2,
       "nome": "kaio",
       "telefone": 987654,
       "endereco": "lagoa azul"
     },
     {
-      "codigo": 3,
+      "id": 3,
       "nome": "ramon",
       "telefone": 48569823,
       "endereco": "quebrada"
+    },
+    {
+      "nome": "sd",
+      "telefone": "sd",
+      "endereco": "klhdlkghdf",
+      "id": 4
     }
   ]
 }

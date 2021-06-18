@@ -68,8 +68,17 @@
                 <td ng-dblclick="editar(garcom)">{{garcom.nome}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.telefone}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.endereco}}</td>
-                <td><a href="" ng-click="editar(garcom)">[Editar]</a></td>
-                <td><a href="" ng-click="excluir(garcom)">[Excluir]</a></td>
+                <td>
+                    <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(garcom)">Editar
+                      <i class="material-icons left">create</i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="excluir(garcom)">Excluir
+                      <i class="material-icons left">delete</i>
+                    </button>
+                </td>
+
             </tr>
         </tbody>
 
@@ -90,4 +99,4 @@
 <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
 <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
 
-</html> 
+</html>

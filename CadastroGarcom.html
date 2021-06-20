@@ -10,6 +10,7 @@
 </head>
 
 <body ng-controller="garcomController">
+
     <header>
         <div ng-include="'MenuNavBar.html'"></div>
     </header>
@@ -18,24 +19,35 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s4">
+                        <i class="material-icons prefix">mode_edit</i>
                         <label for="codigo">Código</label>
                         <input placeholder="Código" id="codigo" type="number" class="validate" ng-model="garcom.id" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s10">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">account_circle</i>
                         <label for="nome">Nome</label>
                         <input placeholder="Nome" id="nome" name="nome" type="text" class="validate" ng-model="garcom.nome" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s10">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <label for="cpf">CPF</label>
+                        <input placeholder="cpf" id="cpf" name="cpf" type="text" ng-model="garcom.cpf" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">phone</i>
                         <label for="telefone">Telefone</label>
                         <input placeholder="Telefone" id="telefone" name="telefone" type="text" class="validate" ng-model="garcom.telefone" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s10">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">location_on</i>
                         <label for="Endereco">Endereço</label>
                         <input placeholder="Endereço" id="Endereco" name="Endereco" type="text" ng-model="garcom.endereco" />
                     </div>
@@ -54,18 +66,20 @@
     <table class="responsive-table">
         <thead>
             <tr>
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Endereco</th>
-                <th></th>
-                <th></th>
+                <th class="card-panel teal lighten-2">Codigo</th>
+                <th class="card-panel teal lighten-2">Nome</th>
+                <th class="card-panel teal lighten-2">CPF</th>
+                <th class="card-panel teal lighten-2">Telefone</th>
+                <th class="card-panel teal lighten-2">Endereco</th>
+                <th class="card-panel teal lighten-2"></th>
+                <th class="card-panel teal lighten-2"></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="garcom in garcons track by $index">
                 <td ng-dblclick="editar(garcom)">{{garcom.id}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.nome}}</td>
+                <td ng-dblclick="editar(garcom)">{{garcom.cpf}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.telefone}}</td>
                 <td ng-dblclick="editar(garcom)">{{garcom.endereco}}</td>
                 <td>
@@ -77,6 +91,7 @@
                     <button class="btn waves-effect waves-light red" type="submit" name="action" ng-click="excluir(garcom)">Excluir
                       <i class="material-icons left">delete</i>
                     </button>
+
                 </td>
 
             </tr>

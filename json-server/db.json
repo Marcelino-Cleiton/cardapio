@@ -17,22 +17,24 @@
   ],
   "garcons": [
     {
-      "id": 2,
-      "nome": "kaio",
-      "telefone": 987654,
-      "endereco": "lagoa azul"
+      "nome": "Edilson schlickmann",
+      "id": 7,
+      "telefone": "0300063727",
+      "endereco": "sf"
     },
     {
-      "id": 3,
-      "nome": "ramon",
-      "telefone": 48569823,
-      "endereco": "quebrada"
+      "nome": "joao",
+      "cpf": "ijasfjsakl",
+      "telefone": "lsdfjsdçl",
+      "endereco": "çlsdmfsd",
+      "id": 8
     },
     {
-      "nome": "sd",
-      "telefone": "sd",
-      "endereco": "klhdlkghdf",
-      "id": 4
+      "nome": "cleiton",
+      "cpf": "asdasdas",
+      "telefone": "asff",
+      "endereco": "ps3",
+      "id": 9
     }
   ]
 }

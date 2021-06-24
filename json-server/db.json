@@ -5,14 +5,14 @@
       "lugares": 3,
       "reservado": true,
       "id": 2,
-      "garcom": ""
+      "garcom": "1"
     },
     {
       "nome": "Perto da saída",
       "lugares": 3,
       "reservado": true,
       "id": 1,
-      "garcom": ""
+      "garcom": "2"
     }
   ],
   "garcons": [

@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $('.parallax').parallax();
     $('.sidenav').sidenav();
+    $('select').formSelect();
 });
 var app = angular.module('mesaApp', []);
-app.controller('mesaController', function($scope, mesaService) {
+app.controller('mesaController', function($scope, mesaService,$timeout) {
     $scope.mesa = {};
+    $scope.garcons = {};
     $scope.reserva = function(mesa) {
         var retorno = "";
         if (mesa.reservado) {
@@ -20,6 +22,12 @@ app.controller('mesaController', function($scope, mesaService) {
         mesaService.listar().then(function(resposta) {
             $scope.mesas = resposta.data;
         });
+        mesaService.listarGarcons().then(function(resposta) {
+            $scope.garcons = resposta.data;
+        });
+        $timeout(function () {
+            $('select').material_select()
+         });
     }
 
     $scope.salvar = function(mesa) {
@@ -43,9 +51,14 @@ app.controller('mesaController', function($scope, mesaService) {
 app.service('mesaService', function($http) {
 
     var api = 'http://localhost:3000/mesas';
+    var apiGarcons = 'http://localhost:3000/garcons';
 
     this.listar = function() {
         return $http.get(api);
+    };
+
+    this.listarGarcons = function() {
+        return $http.get(apiGarcons);
     };
 
     this.salvar = function(mesa) {

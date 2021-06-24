@@ -43,10 +43,13 @@
                 <p>
             </div>
             <div class="row">
-              <div class="input-field col s4">
-                <input placeholder="Garçom" id="garcom" type="text" class="validate" ng-model="mesa.garcom">
-                <label for="Lugares">Garçom</label>
-              </div> 
+              <div class="input-field col s12">
+                <select id="SelecionaGarcom" ng-model="mesa.garcom">
+                  <option value="">Selecione o Garçom</option>
+                  <option ng-repeat="garcom in garcons track by $index" value ="{{garcom.id}}" >{{garcom.nome}}</option>
+                </select>
+                <label for= "SelecionaGarcom">Garçom</label>
+              </div>
             </div> 
             <div class="row">
               <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="salvar(mesa)">Salvar

@@ -7,13 +7,13 @@
       "reservado": true,
       "id": 2,
       "garcom": "Cleiton"
-
+    },
+    {
       "nome": "Perto da saída",
       "lugares": 3,
       "reservado": true,
       "id": 1,
       "garcom": "Edilson"
-
     }
   ],
   "garcons": [

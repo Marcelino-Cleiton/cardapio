@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.parallax').parallax();
     $('.sidenav').sidenav();
     $('select').formSelect();
-});
+});  
 var app = angular.module('mesaApp', []);
 app.controller('mesaController', function($scope, mesaService,$timeout) {
     $scope.mesa = {};
@@ -16,6 +16,12 @@ app.controller('mesaController', function($scope, mesaService,$timeout) {
         }
         return retorno;
     };
+    $scope.garcom = function(mesa) {
+        var garcom = $scope.garcons.filter(function(garcom) {return garcom.id == mesa.garcom;});
+        if (garcom[0].nome != '') { var nome = garcom[0].nome;}
+
+        return nome;
+    };
     listar();
 
     function listar() {
@@ -24,15 +30,17 @@ app.controller('mesaController', function($scope, mesaService,$timeout) {
         });
         mesaService.listarGarcons().then(function(resposta) {
             $scope.garcons = resposta.data;
+            
         });
-        $timeout(function () {
-            $('select').material_select()
-         });
     }
 
     $scope.salvar = function(mesa) {
-        mesaService.salvar(mesa).then(listar);
-        $scope.mesa = {};
+        if (mesa.nome  != '' && mesa.nome != 'Preencha o Nome' && typeof(mesa.nome) != "undefined"  ){
+            mesaService.salvar(mesa).then(listar);
+            $scope.mesa = {};
+        } else {
+            $scope.mesa['nome'] = 'Preencha o Nome';
+        }
     };
 
     $scope.editar = function(mesa) {

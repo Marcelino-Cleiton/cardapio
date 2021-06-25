@@ -1,35 +1,35 @@
 {
   "mesas": [
     {
-      "nome": "Perto da porta",
-      "lugares": 3,
-      "reservado": true,
+      "garcom": 1,
       "id": 2,
-      "garcom": "1"
+      "nome": "Perto da saída",
+      "lugares": 4,
+      "reservado": true
     },
     {
       "nome": "Perto da saída",
       "lugares": 3,
       "reservado": true,
       "id": 1,
-      "garcom": "2"
+      "garcom": 1
     }
   ],
   "garcons": [
     {
-      "codigo": 1,
+      "id": 1,
       "nome": "jõao",
       "telefone": 123456,
       "endereco": "pinheiros"
     },
     {
-      "codigo": 2,
+      "id": 2,
       "nome": "kaio",
       "telefone": 987654,
       "endereco": "lagoa azul"
     },
     {
-      "codigo": 3,
+      "id": 3,
       "nome": "ramon",
       "telefone": 48569823,
       "endereco": "quebrada"

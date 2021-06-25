@@ -43,12 +43,11 @@
                 <p>
             </div>
             <div class="row">
-              <div class="input-field col s12">
-                <select id="SelecionaGarcom" ng-model="mesa.garcom">
-                  <option value="">Selecione o Garçom</option>
-                  <option ng-repeat="garcom in garcons track by $index" value ="{{garcom.id}}" >{{garcom.nome}}</option>
+              <div class="input-field col s6">
+                <select  class="browser-default" ng-model="mesa.garcom" ng-options="garcom.id as garcom.nome for garcom in garcons" material-select watch>
+                  <option value="" disabled selected>Selecione o Garçom</option>
                 </select>
-                <label for= "SelecionaGarcom">Garçom</label>
+                
               </div>
             </div> 
             <div class="row">
@@ -82,7 +81,7 @@
                 <td ng-dblclick="editar(mesa)">{{mesa.nome}}</td>
                 <td ng-dblclick="editar(mesa)">{{mesa.lugares}}</td>
                 <td ng-dblclick="editar(mesa)">{{reserva(mesa)}}</td>
-                <td ng-dblclick="editar(mesa)">{{mesa.garcom}}</td>
+                <td ng-dblclick="editar(mesa)">{{garcom(mesa)}}</td>
                 <td>
                   <button class="btn waves-effect waves-light green" type="submit" name="action" ng-click="editar(mesa)">Editar
                     <i class="material-icons left">create</i>
@@ -105,9 +104,10 @@
         </div>
     </footer>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script language="JavaScript" type="text/javascript" src='js/angular.min.js'></script>
     <script language="JavaScript" type="text/javascript" src='js/script.js'></script>
+
 </div>
 
 </html>

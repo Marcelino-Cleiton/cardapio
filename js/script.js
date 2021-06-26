@@ -48,6 +48,7 @@ app.controller('mesaController', function($scope, mesaService,$timeout) {
     };
 
     $scope.excluir = function(mesa) {
+        $scope.mesa = {};
         mesaService.excluir(mesa).then(listar);
     };
 

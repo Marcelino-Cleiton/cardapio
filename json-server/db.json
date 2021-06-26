@@ -4,7 +4,7 @@
       "garcom": 1,
       "id": 2,
       "nome": "Perto da saída",
-      "lugares": 4,
+      "lugares": 3,
       "reservado": true
     },
     {
@@ -13,6 +13,13 @@
       "reservado": true,
       "id": 1,
       "garcom": 1
+    },
+    {
+      "nome": "Mesa próxima da saída",
+      "lugares": 5,
+      "reservado": false,
+      "garcom": 2,
+      "id": 3
     }
   ],
   "garcons": [
